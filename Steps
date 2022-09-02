@@ -1,0 +1,8 @@
+---Copy the cert and private key (pvk) to new SQL server
+--Copy .bak file for restore to new server
+Create a new cert from copied cert and pvk with the below SQL code
+CREATE CERTIFICATE BackupEncryptTestCert
+FROM FILE = 'D:\Test Encrypted Backup Restore\TdeCert.cer'
+WITH PRIVATE KEY ( FILE = 'D:\Test Encrypted Backup Restore\TdeCert_Pvk.pvk' , DECRYPTION BY PASSWORD = 'Kr(xC2?)v)k]%+q1')
+
+Restore database for gui
